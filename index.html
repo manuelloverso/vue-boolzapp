@@ -116,7 +116,7 @@
             :class="message.status"
           >
             <div class="txt-icon">
-              <p>{{message.message}}</p>
+              <p class="pr-1">{{message.message}}</p>
               <details class="info-msg">
                 <summary><i class="fa-solid fa-chevron-down"></i></summary>
                 <ul>
@@ -139,6 +139,8 @@
             class="type-msg"
             type="text"
             placeholder="Scrivi un messaggio"
+            v-model="messageInput"
+            @keyup.enter="sendMessage()"
           />
 
           <div class="record">

@@ -274,10 +274,6 @@ body {
   margin: 5px 4px 4px 0;
 }
 
-[class^="message-"] p {
-  padding-right: 10px;
-}
-
 .type-bar {
   background-color: var(--background-type-bar);
   display: flex;

@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      messageInput: "",
       activeContact: 0,
       contacts: [
         {
@@ -173,6 +174,18 @@ createApp({
   methods: {
     lastMessageSent(array) {
       return array.length - 1;
+    },
+
+    sendMessage() {
+      if (this.messageInput.length >= 1) {
+        let newMessage = {
+          date: "now",
+          message: this.messageInput,
+          status: "sent",
+        };
+        this.contacts[this.activeContact].messages.push(newMessage);
+      }
+      this.messageInput = "";
     },
   },
 
