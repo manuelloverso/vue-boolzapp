@@ -36,6 +36,7 @@ body {
 
 /* #region LEFT */
 .left {
+  display: none;
   background-color: white;
 }
 
@@ -172,6 +173,139 @@ body {
 .right {
   background-color: black;
 }
+
+.top-bar {
+  background-color: var(--background-header);
+  display: flex;
+  align-items: center;
+  height: 90px;
+  display: flex;
+  border-left: 1px solid gainsboro;
+}
+
+.top-bar-text p {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.top-bar-text span {
+  color: grey;
+}
+
+.top-bar-icons {
+  margin-left: auto;
+}
+
+.content {
+  background-image: url(../img/mine.jpg);
+  height: calc(100% - 90px - 80px);
+  overflow: auto;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.txt-icon {
+  display: flex;
+}
+
+.txt-icon i {
+  margin-right: 10px;
+  color: rgb(154, 154, 154);
+  cursor: pointer;
+}
+
+.txt-icon i:hover {
+  color: rgb(61, 61, 61);
+}
+
+.info-msg {
+  position: relative;
+}
+
+.info-msg summary {
+  list-style: none;
+}
+
+.info-msg ul {
+  position: absolute;
+  z-index: 2;
+  top: 25px;
+  right: 10px;
+  background-color: white;
+  list-style: none;
+  box-shadow: 0px 0px 20px -7px;
+}
+
+.info-msg li {
+  cursor: pointer;
+  text-align: center;
+  width: 180px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgb(233, 233, 233);
+}
+
+.info-msg li:hover {
+  background-color: rgb(233, 233, 233);
+}
+
+.message-left,
+.message-right {
+  max-width: 60%;
+  padding: 15px 0 0 15px;
+  border-radius: 10px;
+}
+
+.message-right {
+  background-color: var(--green-message);
+  align-self: flex-end;
+}
+
+.message-left {
+  background-color: white;
+  align-self: flex-start;
+}
+
+.message-time {
+  text-align: end;
+  color: rgb(144, 144, 144);
+  font-size: 0.7rem;
+  margin: 5px 4px 4px 0;
+}
+
+[class^="message-"] p {
+  padding-right: 10px;
+}
+
+.type-bar {
+  background-color: var(--background-type-bar);
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+.record,
+.emoji {
+  cursor: pointer;
+  padding: 0 30px;
+  color: var(--icons-bottom);
+}
+
+.type-msg {
+  flex-grow: 1;
+  border: none;
+  height: 70%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
 /* #endregion RIGHT */
 
 /* #endregion MAIN */
+
+@media screen and (min-width: 576px) {
+  .left {
+    display: flex;
+  }
+}
