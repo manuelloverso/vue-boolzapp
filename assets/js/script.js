@@ -206,7 +206,17 @@ createApp({
       console.log(activeArray[id]);
       activeArray.splice(id, 1);
     },
+
+    transformDate(date) {
+      let splitDate = date.split(" ");
+      let newDate = splitDate[1].slice(0, -3);
+
+      console.log(newDate);
+      return newDate;
+    },
   },
 
-  mounted() {},
+  mounted() {
+    this.transformDate("10/01/2020 15:30:55");
+  },
 }).mount("#app");

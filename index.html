@@ -88,7 +88,9 @@
                   >
                 </div>
 
-                <div class="time">16:15</div>
+                <div class="time">
+                  {{transformDate(contact.messages[lastMessageSent(contact.messages)].date)}}
+                </div>
               </div>
             </div>
           </template>

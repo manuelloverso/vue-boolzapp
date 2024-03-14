@@ -38,5 +38,7 @@ Done✅
 
 ● Cancella messaggio: cliccando sul messaggio appare un menu a tendina che
 permette di cancellare il messaggio selezionato
+Done✅
 
 ● Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
+Done✅
