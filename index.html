@@ -58,34 +58,40 @@
           <div class="search-bar">
             <div class="icon-input">
               <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-              <input type="text" placeholder="Cerca o inizia una nuova chat" />
+              <input
+                type="text"
+                placeholder="Cerca o inizia una nuova chat"
+                v-model="searchbar"
+              />
             </div>
           </div>
         </div>
 
         <!-- Scrolling Contacts -->
         <div class="contacts">
-          <div
-            v-for="(contact , index) in contacts"
-            class="contact"
-            @click="activeContact = index"
-            :class="activeContact == index ? 'active' : ''"
-          >
-            <div class="pfp-square">
-              <img :src="contact.avatar" alt="" />
-            </div>
-            <div class="contact-text">
-              <div class="name">
-                <p>{{contact.name}}</p>
-                <!-- Recover the last sent message -->
-                <span
-                  >{{contact.messages[lastMessageSent(contact.messages)].message}}</span
-                >
+          <template v-for="(contact , index) in contacts">
+            <div
+              v-if="contact.name.toLowerCase().includes(searchbar.toLowerCase())"
+              class="contact"
+              @click="activeContact = index"
+              :class="activeContact == index ? 'active' : ''"
+            >
+              <div class="pfp-square">
+                <img :src="contact.avatar" alt="" />
               </div>
+              <div class="contact-text">
+                <div class="name">
+                  <p>{{contact.name}}</p>
+                  <!-- Recover the last sent message -->
+                  <span
+                    >{{contact.messages[lastMessageSent(contact.messages)].message}}</span
+                  >
+                </div>
 
-              <div class="time">16:15</div>
+                <div class="time">16:15</div>
+              </div>
             </div>
-          </div>
+          </template>
         </div>
       </div>
 
