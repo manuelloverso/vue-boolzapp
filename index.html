@@ -118,7 +118,7 @@
         <!-- Scrolling Content -->
         <div class="content">
           <div
-            v-for="message in contacts[activeContact].messages"
+            v-for="(message , index) in contacts[activeContact].messages"
             :class="message.status"
           >
             <div class="txt-icon">
@@ -127,7 +127,7 @@
                 <summary><i class="fa-solid fa-chevron-down"></i></summary>
                 <ul>
                   <li>Info messaggio</li>
-                  <li>Cancella messaggio</li>
+                  <li @click="deleteMessage(index)">Cancella messaggio</li>
                 </ul>
               </details>
             </div>

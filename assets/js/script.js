@@ -185,7 +185,7 @@ createApp({
           status: "sent",
         };
         this.contacts[this.activeContact].messages.push(newMessage);
-        console.log(this.contacts);
+        // console.log(this.contacts);
         setTimeout(this.replyMessage, 2000);
       }
       this.messageInput = "";
@@ -198,6 +198,13 @@ createApp({
         status: "received",
       };
       this.contacts[this.activeContact].messages.push(messageReceived);
+    },
+
+    deleteMessage(id) {
+      let activeArray = this.contacts[this.activeContact].messages;
+      console.log(activeArray);
+      console.log(activeArray[id]);
+      activeArray.splice(activeArray[id], 1);
     },
   },
 
