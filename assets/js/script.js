@@ -180,7 +180,7 @@ createApp({
     sendMessage() {
       if (this.messageInput.length >= 1) {
         let newMessage = {
-          date: "now",
+          date: this.getCurrentDateTime(),
           message: this.messageInput,
           status: "sent",
         };
@@ -193,7 +193,7 @@ createApp({
 
     replyMessage() {
       let messageReceived = {
-        date: "now",
+        date: this.getCurrentDateTime(),
         message: "ok",
         status: "received",
       };
@@ -202,7 +202,7 @@ createApp({
 
     deleteMessage(id) {
       let activeArray = this.contacts[this.activeContact].messages;
-      console.log(activeArray);
+
       console.log(activeArray[id]);
       activeArray.splice(id, 1);
     },
@@ -210,13 +210,27 @@ createApp({
     transformDate(date) {
       let splitDate = date.split(" ");
       let newDate = splitDate[1].slice(0, -3);
-
-      console.log(newDate);
       return newDate;
+    },
+
+    getCurrentDateTime() {
+      const today = new Date();
+      let minutes = today.getMinutes();
+      if (minutes < 10) {
+        minutes = "0" + minutes;
+      }
+      const date =
+        today.getFullYear() +
+        "/" +
+        (today.getMonth() + 1) +
+        "/" +
+        today.getDate();
+      const time = today.getHours() + ":" + minutes + ":" + today.getSeconds();
+      console.log(date + " " + time);
+
+      return date + " " + time;
     },
   },
 
-  mounted() {
-    this.transformDate("10/01/2020 15:30:55");
-  },
+  created() {},
 }).mount("#app");
