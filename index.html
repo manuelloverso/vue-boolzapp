@@ -83,12 +83,12 @@
                 <div class="name">
                   <p>{{contact.name}}</p>
                   <!-- Recover the last sent message -->
-                  <span
+                  <span v-if="contact.messages.length != 0"
                     >{{contact.messages[lastMessageSent(contact.messages)].message}}</span
                   >
                 </div>
 
-                <div class="time">
+                <div v-if="contact.messages.length != 0" class="time">
                   {{transformDate(contact.messages[lastMessageSent(contact.messages)].date)}}
                 </div>
               </div>
@@ -119,27 +119,29 @@
 
         <!-- Scrolling Content -->
         <div class="content">
-          <div
-            v-for="(message , index) in contacts[activeContact].messages"
-            :class="message.status"
-          >
-            <div class="txt-icon">
-              <p class="pr-1">{{message.message}}</p>
-              <i
-                @click="showDropdown(index)"
-                class="fa-solid fa-chevron-down dropdown"
-              ></i>
+          <template v-if="contacts[activeContact].messages.length != 0">
+            <div
+              v-for="(message , index) in contacts[activeContact].messages"
+              :class="message.status"
+            >
+              <div class="txt-icon">
+                <p class="pr-1">{{message.message}}</p>
+                <i
+                  @click="showDropdown(index)"
+                  class="fa-solid fa-chevron-down dropdown"
+                ></i>
 
-              <div class="info-msg">
-                <ul>
-                  <li>Info messaggio</li>
-                  <li @click="deleteMessage(index)">Cancella messaggio</li>
-                </ul>
+                <div class="info-msg">
+                  <ul>
+                    <li>Info messaggio</li>
+                    <li @click="deleteMessage(index)">Cancella messaggio</li>
+                  </ul>
+                </div>
               </div>
-            </div>
 
-            <div class="message-time">{{transformDate(message.date)}}</div>
-          </div>
+              <div class="message-time">{{transformDate(message.date)}}</div>
+            </div>
+          </template>
         </div>
 
         <!-- Bottom Bar -->
