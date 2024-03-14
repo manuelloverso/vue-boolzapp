@@ -250,19 +250,19 @@ body {
   background-color: rgb(233, 233, 233);
 }
 
-.message-left,
-.message-right {
+.received,
+.sent {
   max-width: 60%;
   padding: 15px 0 0 15px;
   border-radius: 10px;
 }
 
-.message-right {
+.sent {
   background-color: var(--green-message);
   align-self: flex-end;
 }
 
-.message-left {
+.received {
   background-color: white;
   align-self: flex-start;
 }
