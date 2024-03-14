@@ -14,12 +14,66 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
+      <!-- Main Container -->
       <div id="app" class="container">
-        <!-- Main Container -->
         <!-- Left Column -->
-        <div class="left h-100 col-sm-2 col-md-4"></div>
+        <div class="left h-100 d-flex flex-column col-sm-2 col-md-4">
+            <!-- Fixed Bars -->
+            <div class="fixed-bars">
+            <!-- Status Bar -->
+            <div class="my-status">
+              <div class="pfp-square">
+                <img src="./assets/img/avatar_io.jpg" alt="" />
+              </div>
+              <div class="icons">
+                <i class="fa-solid fa-circle-notch"></i>
+                <i class="fa-solid fa-message"></i>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+  
+            <!-- Notifications Bar -->
+            <div class="notifications">
+              <div class="bell-icon">
+                <i class="fa-solid fa-bell-slash fa-xl bell"></i>
+              </div>
+              <div class="notifications-text">
+                <p>Ricevi notifiche di nuovi messaggi</p>
+                <a href="#">Attiva notifiche desktop</a>
+              </div>
+            </div>
+  
+            <!-- Search Bar -->
+            <div class="search-bar">
+              <div class="icon-input">
+                <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                <input type="text" placeholder="Cerca o inizia una nuova chat" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Scrolling Contacts -->
+          <div class="contacts">
+            <div class="contact">
+                <div class="pfp-square">
+                  <img src="./assets/img/avatar_1.jpg" alt="" />
+                </div>
+                <div class="contact-text">
+                  <div class="name">
+                    <p>Michele</p>
+                    <span>Lorem ipsum dolor sit amet.</span>
+                  </div>
+    
+                  <div class="time">16:15</div>
+                </div>
+              </div>
+          </div>
+        </div>
 
         <!-- Right Column -->
       <div class="right h-100 col-12 col-sm-10 col-md-8"></div>
