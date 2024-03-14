@@ -202,8 +202,6 @@ createApp({
 
     deleteMessage(id) {
       let activeArray = this.contacts[this.activeContact].messages;
-
-      console.log(activeArray[id]);
       activeArray.splice(id, 1);
     },
 
@@ -211,6 +209,16 @@ createApp({
       let splitDate = date.split(" ");
       let newDate = splitDate[1].slice(0, -3);
       return newDate;
+    },
+
+    showDropdown(id) {
+      const dropdowns = document.querySelectorAll(".info-msg");
+      if (dropdowns[id].style.display == "block") {
+        dropdowns[id].style.display = "none";
+      } else {
+        dropdowns.forEach((el) => (el.style.display = "none"));
+        dropdowns[id].style.display = "block";
+      }
     },
 
     getCurrentDateTime() {
@@ -226,7 +234,6 @@ createApp({
         "/" +
         today.getDate();
       const time = today.getHours() + ":" + minutes + ":" + today.getSeconds();
-      console.log(date + " " + time);
 
       return date + " " + time;
     },

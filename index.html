@@ -125,13 +125,17 @@
           >
             <div class="txt-icon">
               <p class="pr-1">{{message.message}}</p>
-              <details class="info-msg">
-                <summary><i class="fa-solid fa-chevron-down"></i></summary>
+              <i
+                @click="showDropdown(index)"
+                class="fa-solid fa-chevron-down dropdown"
+              ></i>
+
+              <div class="info-msg">
                 <ul>
                   <li>Info messaggio</li>
                   <li @click="deleteMessage(index)">Cancella messaggio</li>
                 </ul>
-              </details>
+              </div>
             </div>
 
             <div class="message-time">{{transformDate(message.date)}}</div>
