@@ -59,19 +59,20 @@
 
           <!-- Scrolling Contacts -->
           <div class="contacts">
-            <div class="contact">
+            <div v-for="contact in contacts" class="contact">
                 <div class="pfp-square">
-                  <img src="./assets/img/avatar_1.jpg" alt="" />
+                  <img :src="contact.avatar" alt="" />
                 </div>
                 <div class="contact-text">
                   <div class="name">
-                    <p>Michele</p>
-                    <span>Lorem ipsum dolor sit amet.</span>
+                    <p>{{contact.name}}</p>
+                    <!-- Recover the last sent message -->
+                    <span>{{contact.messages[lastMessageSent(contact.messages)].message}}</span>
                   </div>
     
                   <div class="time">16:15</div>
                 </div>
-              </div>
+            </div>
           </div>
         </div>
 
