@@ -204,7 +204,7 @@ createApp({
       let activeArray = this.contacts[this.activeContact].messages;
       console.log(activeArray);
       console.log(activeArray[id]);
-      activeArray.splice(activeArray[id], 1);
+      activeArray.splice(id, 1);
     },
   },
 
