@@ -1,0 +1,49 @@
+/* #region COMMON */
+body {
+  font-family: "Lato", sans-serif;
+  background: linear-gradient(
+    to bottom,
+    var(--background-green) 150px,
+    var(--background-grey) 150px
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+:root {
+  --background-grey: #dadbd4;
+  --background-green: #009688;
+  --background-header: #eaeaea;
+  --background-type-bar: #f3eeea;
+  --icons-top: #b1b1b1;
+  --icons-bottom: #6b7376;
+  --notifications: #8edafc;
+  --green-message: #d5f9ba;
+  --background-searchbar: #fafafa;
+}
+
+/* #endregion COMMON */
+
+/* #region MAIN */
+.container {
+  height: 90vh;
+  width: 80%;
+  max-width: 1600px;
+  display: flex;
+}
+
+/* #region LEFT */
+.left {
+  background-color: white;
+}
+/* #endregion LEFT */
+
+/* #region RIGHT */
+.right {
+  background-color: black;
+}
+/* #endregion RIGHT */
+
+/* #endregion MAIN */
