@@ -65,7 +65,12 @@
 
         <!-- Scrolling Contacts -->
         <div class="contacts">
-          <div v-for="contact in contacts" class="contact">
+          <div
+            v-for="(contact , index) in contacts"
+            class="contact"
+            @click="activeContact = index"
+            :class="activeContact == index ? 'active' : ''"
+          >
             <div class="pfp-square">
               <img :src="contact.avatar" alt="" />
             </div>
