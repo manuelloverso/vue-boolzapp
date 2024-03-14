@@ -208,6 +208,7 @@ body {
 
 .txt-icon {
   display: flex;
+  position: relative;
 }
 
 .txt-icon i {
@@ -216,16 +217,15 @@ body {
   cursor: pointer;
 }
 
-.txt-icon i:hover {
+.dropdown:hover {
   color: rgb(61, 61, 61);
 }
 
 .info-msg {
   display: none;
-  position: relative;
 }
 
-.sent .info-msg ul {
+.sent .info-msg {
   position: absolute;
   z-index: 2;
   top: 25px;
@@ -235,11 +235,11 @@ body {
   box-shadow: 0px 0px 20px -7px;
 }
 
-.received .info-msg ul {
+.received .info-msg {
   position: absolute;
   z-index: 2;
   top: 25px;
-  left: -20px;
+  right: -150px;
   background-color: white;
   list-style: none;
   box-shadow: 0px 0px 20px -7px;

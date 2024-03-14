@@ -203,6 +203,8 @@ createApp({
     deleteMessage(id) {
       let activeArray = this.contacts[this.activeContact].messages;
       activeArray.splice(id, 1);
+      const dropdowns = document.querySelectorAll(".info-msg");
+      dropdowns.forEach((el) => (el.style.display = "none"));
     },
 
     transformDate(date) {

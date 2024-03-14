@@ -131,12 +131,10 @@
                   class="fa-solid fa-chevron-down dropdown"
                 ></i>
 
-                <div class="info-msg">
-                  <ul>
-                    <li>Info messaggio</li>
-                    <li @click="deleteMessage(index)">Cancella messaggio</li>
-                  </ul>
-                </div>
+                <ul class="info-msg">
+                  <li>Info messaggio</li>
+                  <li @click="deleteMessage(index)">Cancella messaggio</li>
+                </ul>
               </div>
 
               <div class="message-time">{{transformDate(message.date)}}</div>
