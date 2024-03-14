@@ -184,8 +184,19 @@ createApp({
           status: "sent",
         };
         this.contacts[this.activeContact].messages.push(newMessage);
+        console.log(this.contacts);
+        setTimeout(this.replyMessage, 2000);
       }
       this.messageInput = "";
+    },
+
+    replyMessage() {
+      let messageReceived = {
+        date: "now",
+        message: "ok",
+        status: "received",
+      };
+      this.contacts[this.activeContact].messages.push(messageReceived);
     },
   },
 
