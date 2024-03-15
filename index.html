@@ -63,7 +63,11 @@
                 placeholder="Cerca o inizia una nuova chat"
                 v-model="searchbar"
               />
-              <i @click="searchbar = ''" class="fa-solid fa-xmark m-0"></i>
+              <i
+                v-if="searchbar.length > 0"
+                @click="searchbar = ''"
+                class="fa-solid fa-xmark m-0"
+              ></i>
             </div>
           </div>
         </div>
@@ -82,9 +86,17 @@
               </div>
               <div class="contact-text">
                 <div class="name">
-                  <p>{{contact.name}}</p>
+                  <span class="first-substring" v-if="searchbar.length > 0"
+                    >{{searchbar.charAt(0).toUpperCase() +
+                    searchbar.slice(1)}}</span
+                  >
+                  <span
+                    class="second-substring"
+                    :class="searchbar.length > 0 ? 'lighter' : ''"
+                    >{{subtractSubstring(contact.name)}}</span
+                  >
                   <!-- Recover the last sent message -->
-                  <span v-if="contact.messages.length != 0"
+                  <span class="last-message" v-if="contact.messages.length != 0"
                     >{{contact.messages[lastMessageSent(contact.messages)].message}}</span
                   >
                 </div>
@@ -108,7 +120,7 @@
 
           <div class="top-bar-text">
             <p>{{contacts[activeContact].name}}</p>
-            <span
+            <span v-if="contacts[activeContact].messages.length != 0"
               >Ultimo accesso oggi alle
               {{transformDate(contacts[activeContact].messages[lastMessageSent(contacts[activeContact].messages)].date)}}</span
             >

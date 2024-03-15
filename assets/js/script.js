@@ -173,6 +173,17 @@ createApp({
   },
 
   methods: {
+    subtractSubstring(fullString) {
+      const changedString = fullString
+        .toLowerCase()
+        .replace(this.searchbar.toLowerCase(), "");
+      if (this.searchbar.length > 0) {
+        return changedString;
+      } else {
+        return changedString.charAt(0).toUpperCase() + changedString.slice(1);
+      }
+    },
+
     lastMessageSent(array) {
       return array.length - 1;
     },
@@ -256,7 +267,6 @@ createApp({
   },
 
   created() {
-    console.log(this.getCurrentDateTime());
-    console.log(this.transformDate(this.getCurrentDateTime()));
+    console.log(this.subtractSubstring("Mario"));
   },
 }).mount("#app");

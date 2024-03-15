@@ -167,12 +167,20 @@ body {
     display: none;
     justify-content: space-between;
 
-    .name p {
+    .name .first-substring,
+    .name .second-substring {
+      display: inline-block;
       font-size: 1.3rem;
       margin-bottom: 4px;
     }
 
-    .name span {
+    .name .lighter {
+      color: grey;
+    }
+
+    .name .last-message {
+      display: block;
+
       color: rgb(162, 162, 162);
     }
 
