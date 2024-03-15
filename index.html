@@ -63,6 +63,7 @@
                 placeholder="Cerca o inizia una nuova chat"
                 v-model="searchbar"
               />
+              <i @click="searchbar = ''" class="fa-solid fa-xmark m-0"></i>
             </div>
           </div>
         </div>
@@ -71,7 +72,7 @@
         <div class="contacts">
           <template v-for="(contact , index) in contacts">
             <div
-              v-if="contact.name.toLowerCase().includes(searchbar.toLowerCase())"
+              v-if="contact.name.toLowerCase().startsWith(searchbar.toLowerCase())"
               class="contact"
               @click="activeContact = index"
               :class="activeContact == index ? 'active' : ''"
