@@ -108,7 +108,10 @@
 
           <div class="top-bar-text">
             <p>{{contacts[activeContact].name}}</p>
-            <span>Ultimo accesso oggi alle 19:00</span>
+            <span
+              >Ultimo accesso oggi alle
+              {{transformDate(contacts[activeContact].messages[lastMessageSent(contacts[activeContact].messages)].date)}}</span
+            >
           </div>
 
           <div class="top-bar-icons">

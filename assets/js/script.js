@@ -238,17 +238,25 @@ createApp({
       if (minutes < 10) {
         minutes = "0" + minutes;
       }
+
+      let seconds = today.getSeconds();
+      if (seconds < 10) {
+        seconds = "0" + seconds;
+      }
       const date =
         today.getFullYear() +
         "/" +
         (today.getMonth() + 1) +
         "/" +
         today.getDate();
-      const time = today.getHours() + ":" + minutes + ":" + today.getSeconds();
+      const time = today.getHours() + ":" + minutes + ":" + seconds;
 
       return date + " " + time;
     },
   },
 
-  created() {},
+  created() {
+    console.log(this.getCurrentDateTime());
+    console.log(this.transformDate(this.getCurrentDateTime()));
+  },
 }).mount("#app");
