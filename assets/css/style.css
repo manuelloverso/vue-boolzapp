@@ -244,26 +244,21 @@ body {
 
 .info-msg {
   display: none;
+  position: absolute;
+  z-index: 2;
+  background-color: white;
+  list-style: none;
+  box-shadow: 0px 0px 20px -7px;
 }
 
 .sent .info-msg {
-  position: absolute;
-  z-index: 2;
   top: 25px;
   right: 10px;
-  background-color: white;
-  list-style: none;
-  box-shadow: 0px 0px 20px -7px;
 }
 
 .received .info-msg {
-  position: absolute;
-  z-index: 2;
   top: 25px;
   right: -150px;
-  background-color: white;
-  list-style: none;
-  box-shadow: 0px 0px 20px -7px;
 }
 
 .info-msg li {

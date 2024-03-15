@@ -42,9 +42,3 @@ Done✅
 
 ● Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 Done✅
-
-# TODO
-
-- fare in modo che a prescindere la viewport comprenda l'ultimo messaggio
-- Refactoring css
-- verificare se la funzione showDropdown() sia corretta

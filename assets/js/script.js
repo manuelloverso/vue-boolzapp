@@ -189,6 +189,15 @@ createApp({
         setTimeout(this.replyMessage, 2000);
       }
       this.messageInput = "";
+
+      //Changing the mic icon when the message is sent
+      const sendIcon = document.getElementById("mic-send");
+      console.log(sendIcon);
+      sendIcon.innerHTML = `<i class="fa-solid fa-up-long fa-bounce fa-2xl"></i>`;
+
+      setTimeout(function () {
+        sendIcon.innerHTML = `<i class="fa-solid fa-microphone fa-2xl"></i>`;
+      }, 1700);
     },
 
     replyMessage() {
